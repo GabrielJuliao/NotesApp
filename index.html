@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Web Notes App" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/static/css/main.css" />
+    <title>Notes App</title>
+  </head>
+  <body>
+    <header id="top-bar">
+      <div id="tools">
+        <div id="management-tools">
+          <button class="material-button" id="add-button">
+            <img
+              src="/resources/static/icons/add_black_24dp.svg"
+              alt="add"
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="delete-button">
+            <img
+              src="/resources/static/icons/delete_black_24dp.svg"
+              alt="delete"
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="edit-button">
+            <img
+              src="/resources/static/icons/edit_black_24dp.svg"
+              alt="delete"
+              srcset=""
+            />
+          </button>
+          <!-- <datalist id="presets">
+                  <option value="#FF7EB9"></option>
+                  <option value="#FF65A3"></option>
+                  <option value="#7AFCFF"></option>
+                  <option value="#FEFF9C"></option>
+                  <option value="#FFF740"></option>
+                </datalist> -->
+          <button class="material-button">
+            <img
+            src="/resources/static/icons/format_color_fill_black_24dp.svg"
+            alt="delete"
+            srcset=""
+          />
+          </button>
+        </div>
+        <div id="edit-tools">
+          <select name="text format" id="textFormat">
+            <option value="normalText">Normal Text</option>
+            <option value="header2">Header 2</option>
+            <option value="header3">Header 3</option>
+            <option value="header4">Header 4</option>
+          </select>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_bold_black_24dp.svg"
+              alt="bold"
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_italic_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_underlined_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/link_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_align_left_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_align_center_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_align_right_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_list_bulleted_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/format_list_numbered_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+          <button class="material-button" id="">
+            <img
+              src="/resources/static/icons/checklist_black_24dp.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+        </div>
+      </div>
+    </header>
+    <section id="main-section">
+      <div id="side-panel">
+        <div id="scroll-list">
+          <div class="note-card note-card-selected">
+            <h2 class="note-card-title">
+                Welcome to the Notes App!
+            </h2>
+            <p class="note-card-description">
+                This is a sample note
+            </p>
+            <div class="time-color">
+              <time class="note-card-date" datetime="2021-07-07"
+                >07/07/2021</time
+              >
+              <div class="color"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="note">
+          <div id="note-content">
+            <div id="note-title" contenteditable="true">
+                Welcome to the Notes App!
+              </div>
+              <div id="note-description" contenteditable="true">
+                This is a sample note.
+              </div>
+              <div id="note-body" contenteditable="true">
+               <h2>Hi, here you can: </h2> 
+                <ul>
+                    <li>Choose the color</li>
+                    <li>Have lists</li>
+                </ul>
+              </div>
+          </div>
+      </div>
+    </section>
+  </body>
+</html>

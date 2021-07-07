@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#top-bar {
+  width: 100%;
+  height: 40px;
+  background-color: #f2f2f2;
+  -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  position: fixed;
+}
+#tools {
+  display: flex;
+}
+#management-tools {
+  /* border: black thin solid;  */
+  width: 330px;
+  padding: 5px 15px 5px 15px;
+  display: flex;
+}
+#edit-tools {
+  padding: 5px 15px 5px 15px;
+  display: flex;
+}
+.material-button {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 2.5px;
+  border-radius: 8px;
+  border: none;
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-button:hover {
+  background-color: #e6f2ff;
+  color: white;
+}
+
+.material-button > img {
+    width: 50%;
+  }
+#textFormat {
+  -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+#main-section {
+  display: flex;
+}
+
+#side-panel {
+  min-width: 360px;
+  width: 360px;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+#scroll-list {
+  width: 350px;
+  margin-top: 40px;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+#scroll-list::-webkit-scrollbar {
+  display: none;
+}
+#note {
+  width: 100%;
+  height: 100vh;
+  background-color: #feff9c;
+  -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+}
+.note-card {
+  padding: 15px;
+  padding-left: 25px;
+  margin: 5px 0 5px 0;
+  height: 80px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+}
+/* .note-card:hover{
+  background-color: #e6f2ff;
+} */
+.note-card-title {
+  font-size: 16pt;
+  font-weight: bold;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 300px;
+  white-space: nowrap;
+}
+.note-card-description {
+  font-size: 10pt;
+  font-weight: 300;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 300px;
+  white-space: nowrap;
+}
+.note-card-date {
+  font-size: 10pt;
+  font-weight: 300;
+}
+.note-card-selected {
+  background-color: #007aff;
+  color: white;
+}
+.time-color {
+  display: flex;
+  align-items: center;
+}
+.color {
+  background-color: #feff9c;
+  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: thin solid #707070;
+}
+#note-content{
+    width: 600px;
+    height: 600px;
+    margin: 90px 35px 35px 75px;
+    /* border: thin black solid; */
+}
+#note-title{
+    font-size: 26pt;
+    font-weight: bold;
+}
+#note-description{
+    margin: 15px 0 15px 0;
+    font-weight: 300;
+}
+#note-body{
+    background-color: transparent;
+}
