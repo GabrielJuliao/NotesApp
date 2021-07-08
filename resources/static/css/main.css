@@ -25,8 +25,9 @@ body {
   display: flex;
 }
 #management-tools {
-  /* border: black thin solid;  */
-  width: 330px;
+  /* border: black thin solid; */
+  min-width: 340px;
+  width: 340px;
   padding: 5px 15px 5px 15px;
   display: flex;
 }
@@ -46,9 +47,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color .2s linear;
 }
 
-.material-button:hover {
+.material-button:hover, .material-button:focus {
   background-color: #e6f2ff;
   color: white;
 }
@@ -76,12 +78,11 @@ body {
 }
 #scroll-list {
   width: 350px;
-  margin-top: 40px;
+  margin-top: 35px;
   padding: 5px;
+
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
   overflow-y: scroll;
   scrollbar-width: none;
@@ -92,9 +93,10 @@ body {
 #note {
   width: 100%;
   height: 100vh;
-  background-color: #feff9c;
+  background-color: #ffffb3;
   -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.16);
+  transition: background-color .2s linear;
 }
 .note-card {
   padding: 15px;
@@ -140,7 +142,7 @@ body {
   align-items: center;
 }
 .color {
-  background-color: #feff9c;
+  background-color: #ffff00;
   margin-left: 10px;
   width: 10px;
   height: 10px;
@@ -150,17 +152,21 @@ body {
 #note-content{
     width: 600px;
     height: 600px;
-    margin: 90px 35px 35px 75px;
-    /* border: thin black solid; */
-}
+    margin: 90px 35px 35px 50px;
+    }
 #note-title{
     font-size: 26pt;
     font-weight: bold;
+    outline: none;
 }
 #note-description{
     margin: 15px 0 15px 0;
     font-weight: 300;
+    outline: none;
 }
 #note-body{
-    background-color: transparent;
+    padding: 30px;
+    height: 400px;
+    max-height: 400px;
+    outline: none;
 }
