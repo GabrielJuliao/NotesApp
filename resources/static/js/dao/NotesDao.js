@@ -28,6 +28,15 @@ const NotesDao = {
         } else
             return [];
     },
+    updateById: function (id, updatedNote) {
+        let notesList = NotesDao.getAll();
+        for (let i = 0; i < notesList.length; i++) {
+            if (notesList[i].id === id) {
+                notesList[i] = updatedNote;
+            }
+        }
+        localStorage.setItem("notes", JSON.stringify(notesList));
+    },
     genId: function () {
         // fancy stupid algorithm
         // let notesList = NotesDao.getAll();

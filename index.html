@@ -10,84 +10,77 @@
     <script src="./resources/static/js/main.js"></script>
     <script src="./resources/static/js/Editor.js"></script>
     <script src="./resources/static/js/Colors.js"></script>
-    <script src="./resources/static/js/SampleNote.js"></script>
     <script src="./resources/static/js/AddOnClickListener.js"></script>
     <script src="./resources/static/js/controller/ColorController.js"></script>
     <script src="./resources/static/js/controller/NotesController.js"></script>
     <script src="./resources/static/js/dao/NotesDao.js"></script>
     <script src="./resources/static/js/model/NoteModel.js"></script>
+    <script src="./resources/static/js/Utils.js"></script>
     <title>Notes App</title>
 </head>
 <body>
 <header id="top-bar">
     <div id="tools">
         <div id="management-tools">
-            <button class="material-button" id="add-button">
+            <button class="material-button clickable" data-call="addNewNote" id="add-button">
                 <img
                         src="./resources/static/icons/add_black_24dp.svg"
                         alt="add"
                         srcset=""
                 />
             </button>
-            <button class="material-button" id="delete-button">
+            <button class="material-button clickable" data-call="deleteNote" id="delete-button">
                 <img
                         src="./resources/static/icons/delete_black_24dp.svg"
                         alt="delete"
                         srcset=""
                 />
             </button>
-            <button class="material-button" id="edit-button">
-                <img
-                        src="./resources/static/icons/edit_black_24dp.svg"
-                        alt="delete"
-                        srcset=""
-                />
-            </button>
         </div>
-        <div id="edit-tools">
-            <button class="material-button edit-button" data-command="bold" value="b">
+        <div id="editor-tools">
+            <button class="material-button clickable" data-call="formatAs" data-command="bold" value="b">
                 <img
                         src="./resources/static/icons/format_bold_black_24dp.svg"
                         alt="bold"
                         srcset=""
                 />
             </button>
-            <button class="material-button edit-button" data-command="italic">
+            <button class="material-button clickable" data-call="formatAs" data-command="italic">
                 <img
                         src="./resources/static/icons/format_italic_black_24dp.svg"
                         alt=""
                         srcset=""
                 />
             </button>
-            <button class="material-button edit-button" data-command="underline">
+            <button class="material-button clickable" data-call="formatAs" data-command="underline">
                 <img
                         src="./resources/static/icons/format_underlined_black_24dp.svg"
                         alt=""
                         srcset=""
                 />
             </button>
-            <button class="material-button edit-button" data-command="createlink">
+            <button class="material-button clickable" data-call="formatAs" data-command="createlink">
                 <img
                         src="./resources/static/icons/link_black_24dp.svg"
                         alt=""
                         srcset=""
                 />
             </button>
-            <button class="material-button edit-button" data-command="unlink">
+            <button class="material-button clickable" data-call="formatAs" data-command="unlink">
                 <img
                         src="./resources/static/icons/link_off_black_24dp.svg"
                         alt=""
                         srcset=""
                 />
             </button>
-            <button class="material-button edit-button" data-command="insertUnorderedList">
+            <button class="material-button clickable" data-call="formatAs" data-command="insertUnorderedList">
                 <img
                         src="./resources/static/icons/format_list_bulleted_black_24dp.svg"
                         alt=""
                         srcset=""
                 />
             </button>
-            <button class="material-button edit-button" data-command="insertOrderedList">
+            <button class="material-button clickable" data-call="formatAs" data-command="insertOrderedList">
                 <img
                         src="./resources/static/icons/format_list_numbered_black_24dp.svg"
                         alt=""
@@ -95,18 +88,18 @@
                 />
             </button>
             <div class="color-dropdown-container">
-                <button style="margin-right: 5px !important;" id="noteColorButton" class="material-button">
+                <button style="margin-right: 5px !important;" class="material-button clickable" data-call="openPalette">
                     <img
                             src="./resources/static/icons/format_color_fill_black_24dp.svg"
                             alt="note color icon"
                     />
                 </button>
                 <div id="colorsList" class="color-dropdown-content">
-                    <button class="colorButton"></button>
-                    <button class="colorButton"></button>
-                    <button class="colorButton"></button>
-                    <button class="colorButton"></button>
-                    <button class="colorButton"></button>
+                    <button class="colorButton clickable" data-call="setNoteColor"></button>
+                    <button class="colorButton clickable" data-call="setNoteColor"></button>
+                    <button class="colorButton clickable" data-call="setNoteColor"></button>
+                    <button class="colorButton clickable" data-call="setNoteColor"></button>
+                    <button class="colorButton clickable" data-call="setNoteColor"></button>
                 </div>
             </div>
         </div>
@@ -115,33 +108,32 @@
 <section id="main-section">
     <div id="side-panel">
         <div id="scroll-list">
-<!--            <div class="note-card note-card-selected">-->
-<!--                <h2 class="note-card-title">-->
-<!--                    Welcome to the Notes App!-->
-<!--                </h2>-->
-<!--                <p class="note-card-description">-->
-<!--                    This is a sample note-->
-<!--                </p>-->
-<!--                <div class="time-color">-->
-<!--                    <time class="note-card-date" datetime="2021-07-07"-->
-<!--                    >07/07/2021-->
-<!--                    </time-->
-<!--                    >-->
-<!--                    <div class="color"></div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="note-card note-card-selected">-->
+            <!--                <h2 class="note-card-title">-->
+            <!--                    Welcome to the Notes App!-->
+            <!--                </h2>-->
+            <!--                <p class="note-card-description">-->
+            <!--                    This is a sample note-->
+            <!--                </p>-->
+            <!--                <div class="time-color">-->
+            <!--                    <time class="note-card-date" datetime="2021-07-07"-->
+            <!--                    >07/07/2021-->
+            <!--                    </time-->
+            <!--                    >-->
+            <!--                    <div class="color"></div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
     <div id="note">
         <div id="note-content">
             <div id="note-title" contenteditable="true" data-maxlegth="50">
-
+            </div>
+            <div id="note-description" contenteditable="true" data-maxlegth="100">
+            </div>
+            <div id="note-body" contenteditable="true" data-maxlegth="400">
+            </div>
         </div>
-        <div id="note-description" contenteditable="true" data-maxlegth="100">
-        </div>
-        <div id="note-body" contenteditable="true" data-maxlegth="400">
-        </div>
-    </div>
     </div>
 </section>
 </body>

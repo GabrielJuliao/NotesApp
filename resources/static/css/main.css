@@ -34,7 +34,7 @@ body {
     display: flex;
 }
 
-#edit-tools {
+#editor-tools {
     padding: 5px 15px 5px 0;
     display: flex;
 }
@@ -147,7 +147,9 @@ body {
     background-color: #007aff;
     color: white;
 }
-
+.note-card-selected .color{
+    border-color: #fff;
+}
 .time-color {
     display: flex;
     align-items: center;
@@ -159,7 +161,7 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: thin solid #707070;
+    border: 1px solid #707070;
 }
 
 #note-content {
