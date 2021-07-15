@@ -36,7 +36,7 @@ body {
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(4px);
-  min-width: 950px;
+  min-width: 500px;
 }
 
 .material-button {
@@ -103,6 +103,8 @@ body {
   bottom: 0;
   right: 0;
   overflow-y: scroll;
+  /* firefox compatibility */
+  scrollbar-width: none;
 }
 
 #scroll-list::-webkit-scrollbar {
@@ -119,6 +121,7 @@ body {
 .note-card {
   padding: 15px 15px 15px 25px;
   margin: 5px 0 5px 0;
+  min-width: 300px;
   height: 80px;
   background-color: white;
   border-radius: 4px;
@@ -152,12 +155,12 @@ body {
 }
 
 .note-card-selected {
-  background-color: #007aff;
+  background-color: #006ff2;
   color: white;
 }
 
 .note-card-selected .color {
-  border-color: #ffffff;
+  border: 2px solid #ffffff;
 }
 
 .time-color {

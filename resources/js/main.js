@@ -7,7 +7,7 @@ window.onload = () => {
     AddOnClickListener.byClassName("colorButton", Controller.setColor);
     document.addEventListener("keydown", () => {
         const promise = new Promise(resolve => setTimeout(resolve, 250));
-        promise.then(r => Controller.updateNote()).then(r => Controller.updateCardView());
+        promise.then(() => Controller.updateNote()).then(() => Controller.updateCardView());
     });
 }
 const AddOnClickListener = {
@@ -33,11 +33,15 @@ baseColors = [
     "#3399ff",
     "#33cc33",
     "#ffff00",
-    "#ff3399",];
+    "#ffa500",
+    "#ff3399",
+    "#9933ff",];
 lightColors = [
     "#F9FBFF",
     "#b3d9ff",
     "#c2f0c2",
     "#ffffb3",
+    "#ffe4b3",
     "#ffb3d9",
+    "#d9b3ff",
 ];
