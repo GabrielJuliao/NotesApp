@@ -34,8 +34,8 @@ const NoteCard = {
         //assembling component
         card.appendChild(title);
         card.appendChild(description);
-        timeColor.appendChild(date);
         timeColor.appendChild(indicator);
+        timeColor.appendChild(date);
         card.appendChild(timeColor);
 
         //necessary listener, when clicked loads note into view!
