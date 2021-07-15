@@ -2,106 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="description" content="Web Notes App"/>
+    <meta name="description" content="Web, Notes App"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="resources/static/css/main.css"/>
-    <link rel="stylesheet" href="resources/static/css/color-dropdown.css">
-    <script src="./resources/static/js/main.js"></script>
-    <script src="./resources/static/js/Editor.js"></script>
-    <script src="./resources/static/js/Colors.js"></script>
-    <script src="./resources/static/js/AddOnClickListener.js"></script>
-    <script src="./resources/static/js/controller/ColorController.js"></script>
-    <script src="./resources/static/js/controller/NotesController.js"></script>
-    <script src="./resources/static/js/dao/NotesDao.js"></script>
-    <script src="./resources/static/js/model/NoteModel.js"></script>
-    <script src="./resources/static/js/Utils.js"></script>
+    <link rel="stylesheet" href="resources/css/main.css"/>
+    <script src="resources/js/main.js"></script>
+    <script src="resources/js/Controller.js"></script>
+    <script src="resources/js/NotesDao.js"></script>
+    <script src="resources/js/NoteModel.js"></script>
+    <script src="resources/js/NoteCard.js"></script>
     <title>Notes App</title>
 </head>
 <body>
-<header id="top-bar">
+<header id="top-bar" class="shadowy">
     <div id="tools">
-        <div id="management-tools">
-            <button class="material-button clickable" data-call="addNewNote" id="add-button">
-                <img
-                        src="./resources/static/icons/add_black_24dp.svg"
-                        alt="add"
-                        srcset=""
-                />
-            </button>
-            <button class="material-button clickable" data-call="deleteNote" id="delete-button">
-                <img
-                        src="./resources/static/icons/delete_black_24dp.svg"
-                        alt="delete"
-                        srcset=""
-                />
-            </button>
-        </div>
-        <div id="editor-tools">
-            <button class="material-button clickable" data-call="formatAs" data-command="bold" value="b">
-                <img
-                        src="./resources/static/icons/format_bold_black_24dp.svg"
-                        alt="bold"
-                        srcset=""
-                />
-            </button>
-            <button class="material-button clickable" data-call="formatAs" data-command="italic">
-                <img
-                        src="./resources/static/icons/format_italic_black_24dp.svg"
-                        alt=""
-                        srcset=""
-                />
-            </button>
-            <button class="material-button clickable" data-call="formatAs" data-command="underline">
-                <img
-                        src="./resources/static/icons/format_underlined_black_24dp.svg"
-                        alt=""
-                        srcset=""
-                />
-            </button>
-            <button class="material-button clickable" data-call="formatAs" data-command="createlink">
-                <img
-                        src="./resources/static/icons/link_black_24dp.svg"
-                        alt=""
-                        srcset=""
-                />
-            </button>
-            <button class="material-button clickable" data-call="formatAs" data-command="unlink">
-                <img
-                        src="./resources/static/icons/link_off_black_24dp.svg"
-                        alt=""
-                        srcset=""
-                />
-            </button>
-            <button class="material-button clickable" data-call="formatAs" data-command="insertUnorderedList">
-                <img
-                        src="./resources/static/icons/format_list_bulleted_black_24dp.svg"
-                        alt=""
-                        srcset=""
-                />
-            </button>
-            <button class="material-button clickable" data-call="formatAs" data-command="insertOrderedList">
-                <img
-                        src="./resources/static/icons/format_list_numbered_black_24dp.svg"
-                        alt=""
-                        srcset=""
-                />
-            </button>
-            <div class="color-dropdown-container">
-                <button style="margin-right: 5px !important;" class="material-button clickable" data-call="openPalette">
-                    <img
-                            src="./resources/static/icons/format_color_fill_black_24dp.svg"
-                            alt="note color icon"
-                    />
-                </button>
-                <div id="colorsList" class="color-dropdown-content">
-                    <button class="colorButton clickable" data-call="setNoteColor"></button>
-                    <button class="colorButton clickable" data-call="setNoteColor"></button>
-                    <button class="colorButton clickable" data-call="setNoteColor"></button>
-                    <button class="colorButton clickable" data-call="setNoteColor"></button>
-                    <button class="colorButton clickable" data-call="setNoteColor"></button>
-                </div>
-            </div>
+        <button id="btn-add-new-note" class="material-button shadowy " aria-label="add new note">
+            <img
+                    src="resources/icons/add_24dp.svg"
+                    alt="add"
+            />
+        </button>
+        <button id="btn-delete-note" class="material-button shadowy" aria-label="delete selected note">
+            <img
+                    src="resources/icons/delete_24dp.svg"
+                    alt="delete"
+            />
+        </button>
+        <button id="btn-format-bold" class="material-button shadowy format" data-command="bold"
+                aria-label="format bold">
+            <img
+                    src="resources/icons/bold_24dp.svg"
+                    alt="bold"
+            />
+        </button>
+        <button id="btn-format-italic" class="material-button shadowy format" data-command="italic"
+                aria-label="format italic">
+            <img
+                    src="resources/icons/italic_24dp.svg"
+                    alt=""
+            />
+        </button>
+        <button id="btn-format-underline" class="material-button shadowy format" data-command="underline"
+                aria-label="format underline">
+            <img
+                    src="resources/icons/underlined_24dp.svg"
+                    alt=""
+            />
+        </button>
+        <button id="btn-create-link" class="material-button shadowy format" data-command="createlink"
+                aria-label="create a link">
+            <img
+                    src="resources/icons/link_black_24dp.svg"
+                    alt=""
+            />
+        </button>
+        <button id="btn-remove-link" class="material-button shadowy format" data-command="unlink"
+                aria-label="remove link">
+            <img
+                    src="resources/icons/link_off_black_24dp.svg"
+                    alt=""
+            />
+        </button>
+        <button id="btn-unordered-list" class="material-button shadowy format" data-command="insertUnorderedList"
+                aria-label="insert unordered list">
+            <img
+                    src="resources/icons/list_bulleted_24dp.svg"
+                    alt=""
+            />
+        </button>
+        <button id="btn-ordered-list" class="material-button shadowy format" data-command="insertOrderedList"
+                aria-label="insert ordered list">
+            <img
+                    src="resources/icons/list_numbered_24dp.svg"
+                    alt=""
+            />
+        </button>
+        <div id="colorsList" class="shadowy">
+            <button id="btn-white-color" class="colorButton" aria-label="color white"></button>
+            <button id="btn-blue-color" class="colorButton" aria-label="color blue"></button>
+            <button id="btn-green-color" class="colorButton" aria-label="color green"></button>
+            <button id="btn-yellow-color" class="colorButton" aria-label="color yellow"></button>
+            <button id="btn-pink-color" class="colorButton" aria-label="color pink"></button>
         </div>
     </div>
 </header>
@@ -125,7 +106,7 @@
             <!--            </div>-->
         </div>
     </div>
-    <div id="note">
+    <div id="note" class="shadowy">
         <div id="note-content">
             <div id="note-title" contenteditable="true" data-maxlegth="50">
             </div>

@@ -1,20 +1,10 @@
 const NotesDao = {
-    store: function (note) {
+    set: function (note) {
         let notes = NotesDao.getAll();
         notes.push(note)
         localStorage.setItem("notes", JSON.stringify(notes));
     },
-    deleteById: function (id) {
-        let notesList = NotesDao.getAll();
-        let filteredList = [];
-        for (let i = 0; i < notesList.length; i++) {
-            if (notesList[i].id !== id) {
-                filteredList.push(notesList[i]);
-            }
-        }
-        localStorage.setItem("notes", JSON.stringify(filteredList));
-    },
-    getById: function (id) {
+    get: function (id) {
         let notesList = NotesDao.getAll();
         for (let i = 0; i < notesList.length; i++) {
             if (notesList[i].id === id) {
@@ -28,7 +18,18 @@ const NotesDao = {
         } else
             return [];
     },
-    updateById: function (id, updatedNote) {
+    delete: function (id) {
+        let notesList = NotesDao.getAll();
+        let filteredList = [];
+        for (let i = 0; i < notesList.length; i++) {
+            if (notesList[i].id !== id) {
+                filteredList.push(notesList[i]);
+            }
+        }
+        localStorage.setItem("notes", JSON.stringify(filteredList));
+    },
+
+    update: function (id, updatedNote) {
         let notesList = NotesDao.getAll();
         for (let i = 0; i < notesList.length; i++) {
             if (notesList[i].id === id) {
@@ -57,6 +58,5 @@ const NotesDao = {
         // }
         // return 0;
         return new Date().getTime();
-
     },
 }
