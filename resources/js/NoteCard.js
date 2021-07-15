@@ -10,11 +10,14 @@ const NoteCard = {
 
         //adding classes for style and functionality
         card.classList.add("note-card", "shadowy");
-        title.classList.add("note-card-title");
-        description.classList.add("note-card-description");
+        title.classList.add("note-card-title", "place-holder");
+        description.classList.add("note-card-description", "place-holder");
         timeColor.classList.add("time-color");
         date.classList.add("note-card-date");
         indicator.classList.add("color");
+
+        title.setAttribute("data-text","Untitled");
+        description.setAttribute("data-text","Description not provided!");
 
         //id of elements
         card.id = note.id;

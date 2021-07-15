@@ -4,200 +4,213 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 * {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .shadowy {
-  -webkit-box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.16);
-  box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.16);
 }
 
 #top-bar {
-  width: 100%;
-  height: 40px;
-  background: transparent;
-  position: fixed;
-  z-index: 999;
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    position: fixed;
+    z-index: 999;
 }
 
 #tools {
-  display: flex;
-  padding: 5px 0;
-  border-top: solid thin #c5c5c5;
-  background-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
-  min-width: 500px;
+    display: flex;
+    padding: 5px 0;
+    border-top: solid thin #c5c5c5;
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    min-width: 500px;
 }
 
 .material-button {
-  min-width: 34px;
-  width: 34px;
-  height: 30px;
-  margin: 0 4px;
-  border-radius: 4px;
-  border: none;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.2s linear;
+    min-width: 34px;
+    width: 34px;
+    height: 30px;
+    margin: 0 4px;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s linear;
 }
 
 .material-button:hover {
-  background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 #colorsList {
-  height: 30px;
-  min-height: 30px;
-  padding: 0 5px;
-  margin: 0 4px;
-  background: transparent;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 30px;
+    min-height: 30px;
+    padding: 0 5px;
+    margin: 0 4px;
+    background: transparent;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .colorButton {
-  margin: 0 2px 0 2px;
-  border-radius: 4px;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #c5c5c5;
-  transition: border-color 0.2s linear, transform 250ms linear;
+    margin: 0 2px 0 2px;
+    border-radius: 4px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #c5c5c5;
+    transition: border-color 0.2s linear, transform 250ms linear;
 }
 
 .colorButton:hover {
-  border-color: #808080;
-  transform: scale(1.2); 
+    border-color: #808080;
+    transform: scale(1.2);
 }
 
 #main-section {
-  display: flex;
+    display: flex;
 }
 
 #side-panel {
-  min-width: 360px;
-  width: 360px;
-  height: 100vh;
-  background-color: #f2f2f2;
+    min-width: 360px;
+    width: 360px;
+    height: 100vh;
+    background-color: #f2f2f2;
 }
 
 #scroll-list {
-  width: 350px;
-  padding: 40px 5px 5px 5px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow-y: scroll;
-  /* firefox compatibility */
-  scrollbar-width: none;
+    width: 350px;
+    padding: 40px 5px 5px 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    /* firefox compatibility */
+    scrollbar-width: none;
 }
 
 #scroll-list::-webkit-scrollbar {
-  display: none;
-}
-
-#note {
-  width: 100%;
-  height: 100vh;
-  background-color: #ffffb3;
-  transition: background-color 0.2s linear;
+    display: none;
 }
 
 .note-card {
-  padding: 15px 15px 15px 25px;
-  margin: 5px 0 5px 0;
-  min-width: 300px;
-  height: 80px;
-  background-color: white;
-  border-radius: 4px;
-  will-change: background-color;
-  transition: all 0.2s linear;
+    padding: 15px 15px 15px 25px;
+    margin: 5px 0 5px 0;
+    min-width: 300px;
+    height: 80px;
+    background-color: white;
+    border-radius: 4px;
+    will-change: background-color;
+    transition: all 0.2s linear;
 }
 
 .note-card-title {
-  min-height: 31px;
-  font-size: 16pt;
-  font-weight: bold;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 300px;
-  white-space: nowrap;
+    min-height: 31px;
+    max-height: 31px;
+    font-size: 16pt;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 300px;
+    white-space: nowrap;
 }
 
 .note-card-description {
-  min-height: 20px;
-  font-size: 10pt;
-  font-weight: 300;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 300px;
-  white-space: nowrap;
+    min-height: 20px;
+    max-height: 20px !important;
+    font-size: 10pt;
+    font-weight: 300;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 300px;
+    white-space: nowrap;
 }
 
 .note-card-date {
-  font-size: 10pt;
-  font-weight: 300;
+    font-size: 10pt;
+    font-weight: 300;
 }
 
 .note-card-selected {
-  background-color: #006ff2;
-  color: white;
+    background-color: #006ff2;
+    color: white;
 }
 
 .note-card-selected .color {
-  border: 2px solid #ffffff;
+    border: 2px solid #ffffff;
 }
 
 .time-color {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .color {
-  background-color: #ffff00;
-  margin-right: 5px;
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  border: 1px solid #808080;
+    background-color: #F9FBFF;
+    margin-right: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    border: 1px solid #808080;
 }
-
+#note {
+    width: 100%;
+    height: 100vh;
+    background-color: #F9FBFF;
+    transition: background-color 0.2s linear;
+    overflow-y: scroll;
+    border-bottom: 2px solid #c5c5c5;
+    scrollbar-width: none;
+}
 #note-content {
-  width: 600px;
-  height: 600px;
-  margin: 90px 35px 35px 50px;
+    width: 800px;
+    height: 600px;
+    margin: 90px 35px 35px 50px;
 }
 
 #note-title {
-  font-size: 26pt;
-  font-weight: bold;
-  outline: none;
+    font-size: 26pt;
+    font-weight: bold;
+    padding: 5px;
+    outline: none;
 }
 
 #note-description {
-  margin: 15px 0 15px 0;
-  font-weight: 300;
-  outline: none;
+    margin: 15px 0 15px 0;
+    padding: 5px;
+    font-weight: 300;
+    outline: none;
 }
 
 #note-body {
-  padding: 30px;
-  height: 400px;
-  max-height: 400px;
-  outline: none;
+    min-height: 400px;
+    padding: 30px;
+    outline: none;
+}
+
+.content-editable:focus {
+    border-radius: 8px ;
+    border: 1px dotted #707070;
+    background: #ffffff;
+}
+.place-holder:empty:not(:focus):before{
+    content:attr(data-text)
 }
