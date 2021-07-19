@@ -1,101 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="description" content="A Desktop Web Notes App."/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="resources/css/main.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A Desktop Web Notes App." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/css/main.css" />
     <script src="resources/js/main.js"></script>
     <script src="resources/js/Controller.js"></script>
     <script src="resources/js/NotesDao.js"></script>
     <script src="resources/js/NoteModel.js"></script>
     <script src="resources/js/NoteCard.js"></script>
     <title>Notes App</title>
-</head>
-<body>
-<header id="top-bar" class="shadowy">
-    <div id="tools">
-        <button id="btn-add-new-note" class="material-button" aria-label="add new note">
-            <img
-                    src="resources/icons/add_24dp.svg"
-                    alt="add" width="16px" height="16px"
-            />
+  </head>
+  <body>
+    <header id="top-bar" class="shadowy">
+      <div id="tools">
+        <button
+          id="btn-add-new-note"
+          class="material-button"
+          aria-label="add new note"
+        >
+          <img
+            src="resources/icons/add_24dp.svg"
+            alt="add"
+            width="16px"
+            height="16px"
+          />
         </button>
-        <button id="btn-delete-note" class="material-button" aria-label="delete selected note">
-            <img
-                    src="resources/icons/remove_24dp.svg"
-                    alt="delete" width="16px" height="16px"
-            />
+        <button
+          id="btn-delete-note"
+          class="material-button"
+          aria-label="delete selected note"
+        >
+          <img
+            src="resources/icons/remove_24dp.svg"
+            alt="delete"
+            width="16px"
+            height="16px"
+          />
         </button>
-        <button id="btn-format-bold" class="material-button format" data-command="bold"
-                aria-label="format bold">
-            <img
-                    src="resources/icons/bold_24dp.svg"
-                    alt="bold" width="16px" height="16px"
-            />
+        <button
+          id="btn-format-bold"
+          class="material-button format"
+          data-command="bold"
+          aria-label="format bold"
+        >
+          <img
+            src="resources/icons/bold_24dp.svg"
+            alt="bold"
+            width="16px"
+            height="16px"
+          />
         </button>
-        <button id="btn-format-italic" class="material-button format" data-command="italic"
-                aria-label="format italic">
-            <img
-                    src="resources/icons/italic_24dp.svg"
-                    alt="italic" width="16px" height="16px"
-            />
+        <button
+          id="btn-format-italic"
+          class="material-button format"
+          data-command="italic"
+          aria-label="format italic"
+        >
+          <img
+            src="resources/icons/italic_24dp.svg"
+            alt="italic"
+            width="16px"
+            height="16px"
+          />
         </button>
-        <button id="btn-format-underline" class="material-button format" data-command="underline"
-                aria-label="format underline">
-            <img
-                    src="resources/icons/underlined_24dp.svg"
-                    alt="underline" width="16px" height="16px"
-            />
+        <button
+          id="btn-format-underline"
+          class="material-button format"
+          data-command="underline"
+          aria-label="format underline"
+        >
+          <img
+            src="resources/icons/underlined_24dp.svg"
+            alt="underline"
+            width="16px"
+            height="16px"
+          />
         </button>
-        <button id="btn-create-link" class="material-button format" data-command="createlink"
-                aria-label="create a link">
-            <img
-                    src="resources/icons/link_24dp.svg"
-                    alt="create link" width="16px" height="16px"
-            />
+        <button
+          id="btn-create-link"
+          class="material-button format"
+          data-command="createlink"
+          aria-label="create a link"
+        >
+          <img
+            src="resources/icons/link_24dp.svg"
+            alt="create link"
+            width="16px"
+            height="16px"
+          />
         </button>
-        <button id="btn-unordered-list" class="material-button format" data-command="insertUnorderedList"
-                aria-label="insert unordered list">
-            <img
-                    src="resources/icons/list_bulleted_24dp.svg"
-                    alt="bulleted list" width="16px" height="16px"
-            />
+        <button
+          id="btn-remove-link"
+          class="material-button format"
+          data-command="unlink"
+          aria-label="remove link"
+        >
+          <img
+            src="resources/icons/link_off_black_24dp.svg"
+            alt="remove link"
+            width="16px"
+            height="16px"
+          />
         </button>
-        <button id="btn-ordered-list" class="material-button format" data-command="insertOrderedList"
-                aria-label="insert ordered list">
-            <img
-                    src="resources/icons/list_numbered_24dp.svg"
-                    alt="numbered list" width="16px" height="16px"
-            />
+        <button
+          id="btn-unordered-list"
+          class="material-button format"
+          data-command="insertUnorderedList"
+          aria-label="insert unordered list"
+        >
+          <img
+            src="resources/icons/list_bulleted_24dp.svg"
+            alt="bulleted list"
+            width="16px"
+            height="16px"
+          />
+        </button>
+        <button
+          id="btn-ordered-list"
+          class="material-button format"
+          data-command="insertOrderedList"
+          aria-label="insert ordered list"
+        >
+          <img
+            src="resources/icons/list_numbered_24dp.svg"
+            alt="numbered list"
+            width="16px"
+            height="16px"
+          />
         </button>
         <div id="colorsList">
-            <button id="btn-white-color" class="colorButton" aria-label="color white"></button>
-            <button id="btn-blue-color" class="colorButton" aria-label="color blue"></button>
-            <button id="btn-green-color" class="colorButton" aria-label="color green"></button>
-            <button id="btn-yellow-color" class="colorButton" aria-label="color yellow"></button>
-            <button id="btn-orange-color" class="colorButton" aria-label="color orange"></button>
-            <button id="btn-pink-color" class="colorButton" aria-label="color pink"></button>
-            <button id="btn-purple-color" class="colorButton" aria-label="color purple"></button>
+          <button
+            id="btn-white-color"
+            class="colorButton"
+            aria-label="color white"
+          ></button>
+          <button
+            id="btn-blue-color"
+            class="colorButton"
+            aria-label="color blue"
+          ></button>
+          <button
+            id="btn-green-color"
+            class="colorButton"
+            aria-label="color green"
+          ></button>
+          <button
+            id="btn-yellow-color"
+            class="colorButton"
+            aria-label="color yellow"
+          ></button>
+          <button
+            id="btn-orange-color"
+            class="colorButton"
+            aria-label="color orange"
+          ></button>
+          <button
+            id="btn-pink-color"
+            class="colorButton"
+            aria-label="color pink"
+          ></button>
+          <button
+            id="btn-purple-color"
+            class="colorButton"
+            aria-label="color purple"
+          ></button>
         </div>
-    </div>
-</header>
-<section id="main-section">
-    <div id="side-panel">
-        <div id="scroll-list">
-        </div>
-    </div>
-    <div id="note" class="shadowy">
+      </div>
+    </header>
+    <section id="main-section">
+      <div id="side-panel">
+        <div id="scroll-list"></div>
+      </div>
+      <div id="note" class="shadowy">
         <div id="note-content">
-            <div id="note-title" class="content-editable place-holder" data-text="Untitled">
-            </div>
-            <div id="note-description" class="content-editable place-holder" data-text="Description not provided!">
-            </div>
-            <div id="note-body" class="content-editable place-holder" data-text="Type your note here!">
-            </div>
+          <div
+            id="note-title"
+            class="content-editable place-holder"
+            data-text="Untitled"
+          ></div>
+          <div
+            id="note-description"
+            class="content-editable place-holder"
+            data-text="Description not provided!"
+          ></div>
+          <div
+            id="note-body"
+            class="content-editable place-holder"
+            data-text="Type your note here!"
+          ></div>
         </div>
-    </div>
-</section>
-</body>
+      </div>
+    </section>
+  </body>
 </html>

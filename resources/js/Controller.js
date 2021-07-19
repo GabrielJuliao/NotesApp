@@ -114,6 +114,7 @@ const Controller = {
     }
   },
   formatAs: function (element) {
+    console.log(globalEditSelection);
     if (globalEditSelection === "note-body") {
       let command = element.dataset["command"];
       if (command === "createlink") {
@@ -122,7 +123,10 @@ const Controller = {
           Controller.updateNote();
           document.execCommand(command, false, url);
         }
+      } else {
+        document.execCommand(command, false, null);
       }
+      Controller.updateNote();
     }
   },
   setEditSelection(el) {
