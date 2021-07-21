@@ -5,6 +5,13 @@
     <meta name="description" content="A Desktop Web Notes App." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (window.innerWidth <= 768) {
+        if (!confirm("Small screen sizes are currently not supported, do you wish to continue?")) {
+          window.stop();
+        }
+      }
+    </script>
     <link rel="stylesheet" href="resources/css/main.css" />
     <script src="resources/js/main.js"></script>
     <script src="resources/js/Controller.js"></script>
