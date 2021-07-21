@@ -75,9 +75,9 @@ const Controller = {
       liveCard.description;
   },
   clearView: function () {
-    document.getElementById("note-title").innerHTML = " ";
-    document.getElementById("note-description").innerHTML = " ";
-    document.getElementById("note-body").innerHTML = " ";
+    document.getElementById("note-title").innerHTML = "‏‏‎ ‎";
+    document.getElementById("note-description").innerHTML = "‏‏‎ ‎";
+    document.getElementById("note-body").innerHTML = "‏‏‎ ‎";
     document.getElementById("note").style.backgroundColor = lightColors[0];
   },
 
@@ -111,6 +111,15 @@ const Controller = {
       }
       //loads last element into the view
       Controller.loadNoteIntoView(notes[notes.length - 1]);
+    } else {
+      let welcomeNote = welcome();
+      welcomeNote.id = "noteId_" + NotesDao.genId();
+      welcomeNote.dateOfCreation = Utils.getDate();
+      welcomeNote.noteColor = lightColors[3];
+      welcomeNote.indicatorColor = lightColors[3];
+      NotesDao.set(welcomeNote);
+      NoteCard.loadCard(welcomeNote);
+      Controller.loadNoteIntoView(welcomeNote);
     }
   },
   formatAs: function (element) {
