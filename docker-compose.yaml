@@ -1,0 +1,10 @@
+services:
+  notes-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - '8080:8080'
+      - '8443:8443'
+    environment:
+      - IS_TLS_ENABLED=true
