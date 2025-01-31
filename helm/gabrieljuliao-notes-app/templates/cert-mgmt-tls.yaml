@@ -1,0 +1,30 @@
+{{- if .Values.certMgmt.tlsEnabled }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "gabrieljuliao-notes-app.fullname" . }}-certmgmt-cert
+spec:
+  secretName: {{ include "gabrieljuliao-notes-app.fullname" . }}-certmgmt-tls-cert-secret
+  privateKey:
+    rotationPolicy: {{ .Values.certMgmt.cert.privateKey.rotationPolicy | default "Always" }}
+  commonName: {{ include "gabrieljuliao-notes-app.fullname" . }}
+  dnsNames:
+    - {{ include "gabrieljuliao-notes-app.fullname" . }}
+  usages:
+    - server auth # Hardcoded usage for server authentication.
+    # Other possible options:
+    # - digital signature: Verifies authenticity of data
+    # - key encipherment: Encrypts keys (e.g., during TLS handshake)
+    # - data encipherment: Encrypts raw data
+    # - key agreement: Key exchange (e.g., Diffie-Hellman)
+    # - cert sign: Signs subordinate certificates (CA role)
+    # - crl sign: Signs certificate revocation lists
+    # - client auth: Used for client authentication in mutual TLS
+    # - code signing: Verifies integrity and authenticity of code/software
+    # - email protection: Secures email communication
+    # - time stamping: Validates time of document creation
+    # - ocsp signing: Signs OCSP responses
+  issuerRef:
+    name: {{ .Values.certMgmt.cert.issuerRef.name | quote }}
+    kind: {{ .Values.certMgmt.cert.issuerRef.kind | quote }}
+  {{- end }}
