@@ -15,6 +15,7 @@ ENV NGINX_CONFIG_TEMPLATES_ROOT_PATH=/etc/nginx/config_templates
 ENV NGINX_CONFIG_TLS_PATH=$NGINX_CONFIG_TEMPLATES_ROOT_PATH/nginx-tls.conf
 ENV NGINX_CONFIG_PLAINTEXT_PATH=$NGINX_CONFIG_TEMPLATES_ROOT_PATH/nginx-plaintext.conf
 ENV IS_TLS_ENABLED=false
+ENV CONTEXT_PATH=notes-app
 
 # Remove nginx default config
 RUN rm -f /etc/nginx/conf.d/default.conf

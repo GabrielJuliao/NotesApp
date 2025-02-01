@@ -39,6 +39,9 @@ securityContext:
   runAsNonRoot: true
   runAsUser: 1000
 
+app:
+  contextPath: notes-app
+  
 service:
   type: ClusterIP
   port: 8443
@@ -109,6 +112,8 @@ volumeMounts:
     mountPath: "/var/cache/nginx"
   - name: nginx-temp
     mountPath: "/var/run"
+  - name: nginx-temp
+    mountPath: "/tmp/nginx"
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true

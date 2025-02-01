@@ -6,3 +6,4 @@ metadata:
     {{- include "gabrieljuliao-notes-app.labels" . | nindent 4 }}
 data:
   IS_TLS_ENABLED: {{ .Values.certMgmt.tlsEnabled | quote }}
+  CONTEXT_PATH: {{ .Values.app.contextPath | quote }}
